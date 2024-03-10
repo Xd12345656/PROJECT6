@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Speed Detector</title>
+<script>
+  window.onload = function() {
+    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (connection && connection.downlink) {
+      var speedMbps = connection.downlink;
+      document.getElementById("speed").innerText = "Network Speed: " + speedMbps + " Mbps";
+    } else {
+      document.getElementById("speed").innerText = "Network speed not available.";
+    }
+  }
+</script>
+</head>
+<body>
+
+<div id="speed"></div>
+
+</body>
+</html>
